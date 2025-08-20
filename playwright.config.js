@@ -4,14 +4,14 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
-  fullyParallel: false,
+  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 1,
-  workers: 1,
+  workers: 4,
   reporter: 'html',
   use: {
     video: 'on-first-retry',
-    headless: false,
+    headless: true,
   },
 
   projects: [
